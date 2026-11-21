@@ -255,5 +255,64 @@ function escapeHtml(s) {
 <script src="mailbox-admin.js"></script>
 <script src="subjects-admin.js"></script>
 <script src="user-permissions.js"></script>
+
+<script>
+(() => {
+  const tabla = document.getElementById("usersTable");
+  if (!tabla) return;
+
+  const cuerpo = tabla.querySelector("tbody");
+
+  const buscador = document.createElement("input");
+  buscador.type = "search";
+  buscador.placeholder = "Buscar por usuario o correo...";
+  buscador.setAttribute("aria-label", "Buscar usuario o correo");
+  buscador.style.cssText =
+    "width:100%;padding:12px;margin:10px 0;box-sizing:border-box;";
+
+  const contador = document.createElement("p");
+  contador.setAttribute("role", "status");
+
+  tabla.before(buscador, contador);
+
+  function filtrarUsuarios() {
+    const texto = buscador.value.trim().toLowerCase();
+
+    const columnas = [...tabla.querySelectorAll("thead th")];
+    const columnaCorreo = columnas.findIndex(columna =>
+      columna.textContent.toLowerCase().includes("correo")
+    );
+
+    const filas = [...cuerpo.rows];
+    let visibles = 0;
+
+    filas.forEach(fila => {
+      const usuario = fila.cells[0]?.textContent.toLowerCase() || "";
+      const correos = columnaCorreo >= 0
+        ? fila.cells[columnaCorreo]?.textContent.toLowerCase() || ""
+        : "";
+
+      const coincide =
+        usuario.includes(texto) || correos.includes(texto);
+
+      fila.hidden = !coincide;
+      if (coincide) visibles++;
+    });
+
+    contador.textContent = texto && visibles === 0
+      ? "No se encontraron coincidencias."
+      : `Mostrando ${visibles} de ${filas.length} usuarios.`;
+  }
+
+  buscador.addEventListener("input", filtrarUsuarios);
+
+  new MutationObserver(filtrarUsuarios).observe(cuerpo, {
+    childList: true
+  });
+
+  filtrarUsuarios();
+})();
+</script>
+  
 </body>
 </html>
