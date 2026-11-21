@@ -1,7 +1,5 @@
 // ========== USUARIOS AUTORIZADOS ==========
 const USERS = [
-    { username: "kenneth", password: "kenneth2026", expiresAt: new Date("2027-10-31"), emails: [] },
-    { username: "andres", password: "andres2026", expiresAt: new Date("2027-07-01"), emails: ["doctorq131+us58s@gmail.com","fyara2632+dejesus23@gmail.com","fyara2632+isaac213@gmail.com","sandramartinezp34+inge234@gmail.com","caperaj248+isabelmeyfarth@gmail.com","crisreyfu1232+BR545@gmail.com","doctorq131+pipa@gmail.com"] },
     { username: "gocuentascol", password: "gocuentascol2026", expiresAt: new Date("2027-11-23"), emails: ["tarahold594083093+grco@gmail.com","licosaleonor+popeye2@gmail.com"] },
     { username: "luis", password: "0000", expiresAt: new Date("2026-11-28"), emails: [] }
 ];
