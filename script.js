@@ -45,7 +45,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
 
     // Validar expiración
     if (now > new Date(user.expiresAt)) {
-        message.textContent = "Tu cuenta ha vencido, ponte en contacto con tu proveedor àra renovar tu cuenta.";
+        message.textContent = "Tu cuenta ha vencido, ponte en contacto con tu Streaming Gamaz para renovar tu cuenta.";
         return;
     }
 
@@ -72,7 +72,7 @@ document.getElementById("emailForm").addEventListener("submit", async function(e
         const normalizedEmail = String(email || "").trim().toLowerCase();
         const allowedNormalized = allowed.map(a => String(a).trim().toLowerCase()).filter(Boolean);
         if (allowedNormalized.length > 0 && !allowedNormalized.includes(normalizedEmail)) {
-            alert("Consulta con tu proveedor acerca de este correo que deseas obtener codigos");
+            alert("Parece que este correo no esta habilitado para busqueda de códigos, consulta con Streaming Gamaz acerca de este correo que deseas obtener códigos");
             return;
         }
     }
@@ -120,7 +120,7 @@ document.getElementById("emailForm").addEventListener("submit", async function(e
         } 
         // Si no se encuentra nada
         else {
-            alert(data.error || data.message || "No se encontró resultado para tu cuenta, vuelve a intentarlo nuevamente.");
+            alert(data.error || data.message || "No se ha encontrado ningun código para tu cuenta, vuelve a intentarlo nuevamente.");
         }
     } catch (error) {
         // Ocultar el mensaje de espera en caso de error
