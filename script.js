@@ -1,7 +1,8 @@
 // ========== USUARIOS AUTORIZADOS ==========
 const USERS = [
     { username: "1090467098", password: "0000", expiresAt: new Date("2027-09-15"), emails: [] },
-    { username: "carolina", password: "0044", expiresAt: new Date("2027-02-28"), emails: ["m.ar.1.9.9.3.hoy@gmail.com","123caminos123+37838@gmail.com","123ca.m.i.n.os12.3@gmail.com","m.a.r.19.9.3hoy@gmail.com","mar1993hoy+SQDJ8O@gmail.com","mar1993hoy+rionegro673@gmail.com"], disabledSubjects: ["amazon.com: Sign-in attempt","amazon.com: Intento de inicio de sesión","Amazon password assistance","Urgente: Tu código de un solo uso de HBO Max","Your one-time passcode for Disney+","Votre code d'accès à usage unique pour Disney+","Tu código de acceso único para Disney+","Completa tu solicitud de cambio de contraseña","Completa tu solicitud de restablecimiento de contraseña"] }
+    { username: "carolina", password: "0044", expiresAt: new Date("2027-02-28"), emails: ["m.ar.1.9.9.3.hoy@gmail.com","123caminos123+37838@gmail.com","123ca.m.i.n.os12.3@gmail.com","m.a.r.19.9.3hoy@gmail.com","mar1993hoy+SQDJ8O@gmail.com","mar1993hoy+rionegro673@gmail.com"], disabledSubjects: ["amazon.com: Sign-in attempt","amazon.com: Intento de inicio de sesión","Amazon password assistance","Urgente: Tu código de un solo uso de HBO Max","Your one-time passcode for Disney+","Votre code d'accès à usage unique pour Disney+","Tu código de acceso único para Disney+","Completa tu solicitud de cambio de contraseña","Completa tu solicitud de restablecimiento de contraseña"] },
+    { username: "rojas", password: "0057", expiresAt: new Date("2026-12-31"), emails: ["mar1993hoy+C5KLVV@gmail.com","123ca.m.i.n.os12.3@gmail.com"] }
 ];
 
 const MAX_ATTEMPTS = 1000000;
